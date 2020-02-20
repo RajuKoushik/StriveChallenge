@@ -16,7 +16,7 @@ class Profile(models.Model):
 
 
 class Quiz(models.Model):
-    quiz_created_by = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    quiz_created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     quiz_name = models.TextField(max_length=500, blank=True)
     quiz_description = models.TextField(max_length=500, blank=True)
     quiz_created_date = models.DateField(null=True, blank=True)
@@ -40,7 +40,7 @@ class ConnectionQuizQuestion(models.Model):
 
 class Answers(models.Model):
     connection_quiz_question_id = models.ForeignKey(ConnectionQuizQuestion, on_delete=models.CASCADE)
-    profile_id = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    profile_id = models.ForeignKey(User, on_delete=models.CASCADE)
     answer_description = models.TextField(max_length=500, blank=True)
     time_stamp = models.DateField(null=True, blank=True)
 

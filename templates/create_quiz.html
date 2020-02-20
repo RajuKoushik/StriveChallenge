@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>You can create a quiz here</title>
+
+    <p>The logged in user is {{ user }}</p>
+
+    <form action="{% url "create_quiz_api" %}" method="post">
+        <label for="quiz_name">Quiz Name </label>
+        <input id="quiz_name" type="text" name="quiz_name" value="Default name for the quiz.">
+        <input type="submit" value="OK">
+    </form>
+
+
+</head>
+<body>
+
+</body>
+</html>
