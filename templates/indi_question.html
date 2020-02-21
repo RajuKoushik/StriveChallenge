@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <form action="{% url "submit_answer_api" %}" method="post">
+
+
+        {% for q in questions %}
+
+            <label for="quest_name">{{ q.question_description }}</label>
+            <input id="answer_name{{ forloop.counter }}" type="text" name="answer_name">
+
+
+        {% endfor %}
+
+        <input id="question_id" type="hidden" name="question_id" value={{ questions }}>
+
+        <input id="quiz_id" type="hidden" name="quiz_id" value={{ quiz.id }}>
+
+        <input type="submit" value="OK">
+    </form>
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<body>
+
+{% for q in quiz %}
+    <div id="border" style="max-width: 800px; margin : 0 auto;">
+        <div id="quiz">
+            <h1 id="btitle"><a href="{{ q.id }}"><strong>{{ q.quiz_name }}</strong></a></h1>
+            <p id="date">Published : {{ q.quiz_created_date }}</p>
+        </div>
+        <p id="text">{{ q.quiz_created_by|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+
+</body>
+</html>

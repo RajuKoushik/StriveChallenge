@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indi Quiz</title>
+</head>
+<body>
+
+<p>Indi Quiz {{ quiz.quiz_name }}</p>
+
+<form action="/home/{{ quiz.id }}/{{ question_id }}" method="post">
+    <label for="start_test">Quiz Name </label>
+    <input id="quiz_name" type="hidden" name="quiz_name" value={{ quiz.id }}>
+    <input type="submit" value="Start Test">
+</form>
+
+</body>
+</html>

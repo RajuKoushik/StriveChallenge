@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <p>Quiz has been created</p>
     <p>create question</p>
+
+
 </head>
+
+
 <body>
 
+<form action="{% url "create_questions_api" %}" method="post">
+    <label for="ques_name1">Question 1 </label>
+    <input id="ques_name1" type="text" name="ques_name_1">
+
+    <label for="ques_name2">Question 2 </label>
+    <input id="ques_name2" type="text" name="ques_name_2">
+
+    <label for="ques_name3">Question 3 </label>
+    <input id="ques_name3" type="text" name="ques_name_3">
+
+    <label for="ques_name4">Question 4 </label>
+    <input id="ques_name4" type="text" name="ques_name_4">
+
+    <label for="quiz_name5">Question 5 </label>
+    <input id="quiz_name5" type="text" name="ques_name_5">
+
+    <input id="quiz_id" type="hidden" name="quiz_id" value="{{ quiz.id }}">
+
+
+    <input type="submit" value="OK">
+</form>
+
 </body>
+
+
 </html>
+

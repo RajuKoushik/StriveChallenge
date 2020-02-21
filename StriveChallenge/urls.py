@@ -16,11 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from api.views import create_quiz, create_quiz_api
+from api.views import create_quiz, create_quiz_api, create_questions_api, home, indi_quiz, submit_answer_api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('create_quiz/', create_quiz),
     path('create_quiz_api/', create_quiz_api, name="create_quiz_api"),
+    path('create_questions_api/', create_questions_api, name="create_questions_api"),
+    path('home/', home),
+    path('home/<int:quiz_id>/', indi_quiz, name='indi_quiz'),
+    # path('home/<int:quiz_id>/', indi_question, name='indi_question'),
+    path('submit_answer_api/', submit_answer_api, name='submit_answer_api'),
 
 ]
